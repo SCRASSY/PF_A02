@@ -1,0 +1,39 @@
+[Scene]
+ID=StartRoom
+Description=Your space station has lost power, you need to find what the problem is before it's too late.
+[1. Inspect the comms array]->[CommsRoom01]
+[2. Go to the security room]->[SecurityRoom]
+end_scene;
+
+[Scene]
+ID=CommsRoom01
+Description=You have entered the comms room to inspect the array to see if you can send a message for help.
+[1. Try sending a message for help]->[CommsRoom02]
+[2. Go back]->[StartRoom]
+end_scene;
+
+[Scene]
+ID=CommsRoom02
+Description=You have tried to send a message for help but it seems as though the comms array seems to have minimal power, maybe there's a backup comms array somewhere.
+[1. Go back]->[StartRoom]
+end_scene;
+
+[Scene]
+ID=SecurityRoom
+Description=Your inside the security room and notice the security cameras are not working and there is no backup comms array, maybe the storage room has one.
+[1. Go to the storage room]->[StorageRoom]
+[2. Go back]->[StartRoom]
+end_scene;
+
+[Scene]
+ID=StorageRoom
+Description=What is that? Is that a backup comms array, you can now send for help!.
+[1. Send for help]->[EndScene]
+[2. Go back]->[SecurityRoom]
+end_scene;
+
+[Scene]
+ID=EndScene
+Description=CONGRATULATIONS!!! You have called for help and a shuttle is on it's way.
+end_scene;
+end_adventure;
